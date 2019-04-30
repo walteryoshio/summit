@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Summit</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" >
+    <link href="css/fileinput.css" media="all" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
+    <link href="themes/explorer-fas/theme.css" media="all" rel="stylesheet" type="text/css"/>   
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Font Awesome JS -->
+    
+</head>
+
+<body>
+    <div class="wrapper shadow">
+        <!-- Sidebar  -->
+        <nav id="sidebar" class="shadow">
+            <div class="sidebar-header">
+                <img src="./img/logo.png" alt="">
+            </div>
+
+            
+            <ul class="menu">
+                <li> <a href="index.html"> <img class="img-home" src="./img/home.png" alt=""> Inicial</a> </li>
+                <li> <a href="lancamentos.html"><img class="img-lacamentos" src="./img/lancamento.png" alt="">Lançamentos</a> </li>
+                <li><a href="autorizacoes.html"><img class="img-atualizacoes" src="./img/atualizacao.png" alt="">Autorizacões</a></li>
+                <li> <a href="enviodocs.html"><img class="img-envdoc" src="./img/donwload2.png" alt="">Envio de documentos</a> </li>
+                <li> <a href="comprovantes.html"> <img class="img-comprovante" src="/img/comprovantes.png" alt="">comprovantes</a></li>
+                <li> <a href="relatorio.html"> <img class="img-relatorio" src="./img/relatorio.png" alt="">Relatórios</a></li>
+                <li><a href="atendimento.html"><img class="img-atendimento" src="./img/atendimento.png" alt="">atendimento</a></li>
+                <li> <a href="#"> <img class="img-sair" src="./img/sair.png" alt="">Sair</a></li>
+            </ul>
+        
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content" class="container-fluid">
+            <button type="button" id="sidebarCollapse" class="btn btn-info d-none">
+                <i class="fas fa-align-left"></i>
+                <span>Toggle Sidebar</span>
+            </button>
+            
+            <nav class="navbar navbar-expand-lg  navbar-light bg-light">
+                <div class="container-fluid">
+
+                
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link info-icons" href="#" title="Saldo da conta atual:" data-container="body" data-toggle="popover" data-placement="bottom" data-content="2.312,09"><img src="./img/nav-money.png" alt=""></a>
+                                
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link info-icons" href="#"><img src="./img/nav-bell.png" alt=""></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link p-0" href="#"><img class="img-perfil" src="./img/mulher.png" alt=""></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link user-name" href="#">
+                                    
+                                    Carolina Almeida
+                                    <p>VFG Factory Ltda.</p>
+
+                                </a>
+                              
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="row shadow money-status">
+                <div class="col-md-3">
+                        <p>Total de lançamentos hoje</p> 
+                        <h1>R$ 23.239,78</h1>
+                </div>
+
+                <div class="col-md-3">
+                    <p>Total de lançamentos nesse mês</p>
+                    <h1>R$ 223.239,78</h1>
+                </div>
+
+                <div class="col-md-3">
+                    <p>Total de lançamentos para autorizar</p>
+                    <h1>R$ 1.239,78</h1>
+                </div>
+
+                <div class="col-md-3">
+                    <p>Lucro mensal atual</p>
+                    <h1>R$ 2390.229,78</h1>
+                </div>
+            </div>
+
+
+            <div class="row m-t-20">
+                
+                <div class="col-md-9">
+                    <div class="row">
+                            <div class="col-md-8">
+
+                                <div class="shadow h-100p ">
+                                    <canvas id="myChart"  width="1100" height="400"></canvas>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-4">
+
+                                    <div class="shadow h-100p ">
+
+                                            <h1 class="f-s-20 text-center f-c-blue"> <span class="qdl"> Pagamentos </span> pendentes de autorização</h1>
+                                            <p class="f-s-130 f-c-gold text-center">43</p>
+                                            <p class="f-s-20 f-c-darkgold p-l-15">Total: R$ 1.239,78</p>
+
+                                    </div>
+
+                            </div>
+                        
+                        </div>
+
+                            <div class="row">
+
+                               <div class="col-md-12 m-t-50">
+                                   
+                                   <div class="shadow p-3">
+                                        <h2 class="f-s-12 f-c-blue " >Últimos Lançamentos</h2>
+                                        <table class="table table-hover table-ultimo-lancamentos m-t-20">
+                                          
+                                                <tbody>
+                                                  <tr>
+                                                    <td>R$ 2.212.03</td>
+                                                    <td>Pagamento de impostos DARF 02/2019</td>
+                                                    <td> <div class="table-status">não autorizado</div></td>
+                                                    <td> <div class="text-center td-time"> <img src="./img/time.png" alt=""> 12:33</div></td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>R$ 2.212.03</td>
+                                                    <td>Pagamento de impostos DARF 02/2019</td>
+                                                    <td><div class="table-status">não autorizado</div></td>
+                                                    <td> <div class="text-center td-time"> <img src="./img/time.png" alt=""> 12:33</div></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>R$ 2.212.03</td>
+                                                    <td>Pagamento de impostos DARF 02/2019</td>
+                                                    <td><div class="table-status">não autorizado</div></td>
+                                                    <td> <div class="text-center td-time"> <img src="./img/time.png" alt=""> 12:33</div></td>
+                                                </tr>
+                                                </tbody>
+                                              </table>
+
+                                   </div>
+                               </div>
+
+                            </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="shadow h-100vh">
+
+                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                        <li class="nav-item">
+                                          <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"> <img src="./img/stack.png" alt=""></a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"><img src="./img/message.png" alt=""></a>
+                                        </li>
+                                       
+                                      </ul>
+
+                                      <div class="tab-content" id="pills-tabContent">
+                                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+
+                                            <div class="col-md-12">
+                                                    
+                                                <div class="form-group">
+                                                    <div class="file-loading">
+                                                        <input id="file-4" type="file" class="file" data-upload-url="#" data-theme="fas">
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+
+                                                <div class="col-md-12">
+                                                    <div class="col-md-12 p-0 m-t-20">
+                                                        <div class="row">
+
+                                                            <div class="col-md-1">
+                                                                    <img src="./img/download.png" alt="">
+                                                            </div>
+                                                    
+                                                            <div class="col-md-9">
+                                                                    <div class="progress m-t-5">
+                                                                
+                                                                            <div class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                            <div class="percentage">75%</div>
+                                                                    </div>
+                                                            </div>
+
+                                                     
+                                                    </div>
+                                                    </div>
+                                                </div>
+
+                                                
+                                                <div class="col-md-12">
+                                                        <div class="col-md-12 p-0 m-t-20">
+                                                            <div class="row">
+                                                            <div class="col-md-1">
+                                                                    <img src="./img/download.png" alt="">
+                                                            </div>
+                                                       
+                                                            <div class="col-md-9">
+                                                                    <div class="progress m-t-5">
+                                                                   
+                                                                            <div class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                            <div class="percentage">75%</div>
+                                                                    </div>
+                                                            </div>
+    
+                                                        </div>
+                                                        </div>
+                                                </div>
+
+                                                
+                                                <div class="col-md-12">
+                                                        <div class="col-md-12 p-0 m-t-20">
+                                                            <div class="row">
+                                                            <div class="col-md-1">
+                                                                    <img src="./img/download.png" alt="">
+                                                            </div>
+                                                       
+                                                            <div class="col-md-9">
+                                                                    <div class="progress m-t-5">
+                                                                   
+                                                                            <div class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                            <div class="percentage">75%</div>
+                                                                    </div>
+                                                                    
+                                                            </div>
+    
+                                                        </div>
+                                                        </div>
+                                                </div>
+                                            
+
+
+                                        </div>
+                                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+                                            <div class="row painel-bate-papo">
+                                                <div class="col-3 d-flex justify-content-center align-items-center ">
+                                                    <img class="rounded-circle" src="img/chat1.jpg" alt="">
+                                                </div>
+                                                <div class="col-9 atendimento-text">
+                                                    <h2 class="d-lock text-left">Atendimento: #2019032132134</h2>
+                                                    <h5 class="d-block text-right">Marcos Almeida - SUMMIT</h5>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row painel-bate-papo">
+                                                    <div class="col-3 d-flex justify-content-center align-items-center ">
+                                                        <img class="rounded-circle" src="img/chat1.jpg" alt="">
+                                                    </div>
+                                                    <div class="col-9 atendimento-text">
+                                                        <h2 class="d-lock text-left">Atendimento: #2019032132134</h2>
+                                                        <h5 class="d-block text-right">Marcos Almeida - SUMMIT</h5>
+                                                    </div>
+                                                </div>
+                                                
+
+                                        </div>
+
+                                        
+
+                                      </div>
+                        </div>
+                    </div>
+                
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="js/jquery.js"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="js/plugins/piexif.js" type="text/javascript"></script>
+    <script src="js/plugins/sortable.js" type="text/javascript"></script>
+    <script src="js/fileinput.js" type="text/javascript"></script>
+    <script src="js/locales/fr.js" type="text/javascript"></script>
+    <script src="js/locales/es.js" type="text/javascript"></script>
+    <script src="themes/fas/theme.js" type="text/javascript"></script>
+    <script src="themes/explorer-fas/theme.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+   
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+        <script src="./js/main.js"></script>  
+</body>
+
+</html>
